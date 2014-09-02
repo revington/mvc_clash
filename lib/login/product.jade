@@ -1,0 +1,7 @@
+extend ../../views/layout
+
+block content
+    a(href="#{mountpath}") back to products
+    h1 #{product.name}
+    p Tags #{product.tags.join(',')}
+    p #{product.description}

@@ -1,0 +1,18 @@
+extend ../../views/layout
+
+block content
+    h1 login
+    p #{msg}
+    form(role="form", method="post")
+        .form-group 
+            label(for="username") username
+            input.form-control(
+                name="username", 
+                required=true)
+        .form-group 
+            label(for="passwd") passwd
+            input.form-control(
+                name="passwd", 
+                required=true, 
+                type="password")
+        button.btn.btn-default(type="submit") Submit

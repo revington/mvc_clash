@@ -1,0 +1,13 @@
+-maxRowsPerColumn = locals.tags && Math.ceil(tags.length/6) ||0
+-i=0
+-len = locals.tags && tags.length ||0
+.row
+    -while( i < len)
+        ul.span2
+            -for ( j= maxRowsPerColumn;j && i<len; i++, j--){
+                li
+                    a(href="#{tags[i].url}") 
+                        |#{tags[i].key|| null}
+                        span.badge!=tags[i].value
+                    
+                -}

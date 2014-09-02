@@ -1,0 +1,13 @@
+extend ../../views/layout
+
+block content
+    ol.breadcrumb
+        li backend
+    a.btn.btn-success.pull-right(href="#{mountpath}/new") new product
+    h1 Backend
+        small current products
+    -each row in products.rows
+        -var product = row.doc
+        div(id="product-#{product._id}")
+            h2 
+                a(href="#{mountpath}/#{product._id}") #{product.name}

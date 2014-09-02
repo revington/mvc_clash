@@ -1,0 +1,31 @@
+extend ../../views/layout
+
+block content
+    ol.breadcrumb
+        li 
+            a(href="#{mountpath}") backend
+        li #{product.name}
+            
+
+    h1 #{product.name}
+           
+    p #{msg}
+    form(role="form", method="post")
+        input(type="hidden", name="_rev", value="#{product._rev}")
+        .form-group 
+            label name
+            input.form-control(name="name", required=true, value="#{product.name ||''}")
+        .form-group 
+            label price
+            input.form-control(name="price", 
+                required=true, 
+                type="number", 
+                value="#{product.price}")
+        .form-group 
+            label description
+            textarea.form-control(name="description")=product.description ||''
+        .form-group 
+            label tags
+            textarea.form-control(name="tags")=product.tags && product.tags.join('\n') ||''
+            p.help-block One tag per line
+        button.btn.btn-default(type="submit") Submit

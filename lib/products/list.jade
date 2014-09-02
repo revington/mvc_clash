@@ -1,0 +1,18 @@
+extend ../../views/layout
+
+block content
+    ol.breadcrumb
+        li products
+    h1 we got #{products.total_rows} products here
+    .col-md-8
+        -each row in products.rows
+            -var product = row.doc
+            div(id="product-#{product._id}")
+                h2 
+                    a(href="#{mountpath}/#{product._id}") #{product.name}
+                p #{product.description}
+    .col-md-4
+        h2 Browse by tags
+        ul.unstyled-list
+            -each tag in tags.rows
+                li #{tag.key} #{tag.value}

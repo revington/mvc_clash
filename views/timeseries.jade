@@ -1,0 +1,22 @@
+extend layout
+block scripts
+        script(src="/d3/d3.js")
+        script(src="/c3/c3.js")
+        script.
+
+            var input = {
+                bindto:'#chart',
+                data: !{data}, 
+                axis:{
+                x: {
+                    type: 'timeseries',
+                    tick: {
+                        format: '%Y-%m-%dT%H:%M:%S'
+                    }
+                }
+            }};
+            var chart=c3.generate(input);
+
+block content
+    h1 Campaign id #{campaign}, creative #{creative}
+    #chart

@@ -1,0 +1,14 @@
+extend ../../views/layout
+
+mixin breadcrumbs
+    ol.breadcrumb
+        li 
+            a(href="#{mountpath}") products
+        li #{product.name}
+block content
+    mixin breadcrumbs
+    h1 #{product.name}
+    p Tags #{product.tags.join(',')}
+    p #{product.description}
+    p Price: #{product.price}
+    mixin breadcrumbs
