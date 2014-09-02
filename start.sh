@@ -18,4 +18,4 @@ curl -H "Content-Type: application/json" -d '
         }
     }
 } ' "$DB"
-node server.js
+nodemon server.js

@@ -3,7 +3,7 @@ extend ../../views/layout
 block content
     ol.breadcrumb
         li products
-    h1 we got #{products.total_rows} products here
+    h1 #{products.total_rows} products here
     .col-md-8
         -each row in products.rows
             -var product = row.doc
